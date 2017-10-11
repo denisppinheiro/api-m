@@ -27,6 +27,8 @@ if ! [ $(sudo docker restart kong) ]; then
     -p 8443:8443 \
     -p 8001:8001 \
     -p 8444:8444 \
+	-v /vagrant/kong/.box/local/kong:/usr/local/kong \
+	-v /vagrant/kong/.box/etc/kong:/etc/kong \
     kong
 	
 else
